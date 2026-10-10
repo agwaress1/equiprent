@@ -1,7 +1,7 @@
 services:
   postgres:
     image: postgres:16-alphine
-    invironment:
+    environment:
       POSTGRES_DB: equiprent 
       POSTGRES_USER: equiprent 
       POSTGRES_PASSWORD: equiprent 
