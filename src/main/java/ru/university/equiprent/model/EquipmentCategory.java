@@ -21,7 +21,8 @@ import lombok.Setter;
 @Builder
 public class EquipmentCategory {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = 
+        GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)

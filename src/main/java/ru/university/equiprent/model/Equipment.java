@@ -19,15 +19,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="equipment")
-@Getter 
-@Setter 
-@NoArgsConstructor 
-@AllArgsConstructor 
-@Builder 
+@Table(name = "equipment")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Equipment {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = 
+        GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
@@ -35,17 +36,18 @@ public class Equipment {
     @Column(nullable = false)
     private BigDecimal dailyRate;
 
-    @ManyToOne
-    @JoinColumn(name = "category_id", 
+    @ManyToOne 
+    @JoinColumn(name = "category_id",
         nullable = false
     )
     private EquipmentCategory category;
-
-    @Column(nullable=false)
+    
+    @Column(nullable = false)
     private String serialNumber;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable=false)
+    @Column(nullable = false)
     @Builder.Default
-    private EquipmentStatus status = EquipmentStatus.AVAILABLE;
+    private EquipmentStatus status = 
+    EquipmentStatus.AVAILABLE;
 }

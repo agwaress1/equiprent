@@ -7,11 +7,19 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public record EquipmentRequest(
-    @NotBlank(message = "Title cannot be blank") String title,
+    @NotBlank(message = "Title cannot be blank") 
+    String title,
+
     @NotNull(message = "dailyRate cannnot be Null or Empty")  
     @DecimalMin(value = "0.01", 
     message = "dailyRate cannot be lower then 0")
-    BigDecimal dailyRate
+    BigDecimal dailyRate,
+
+    @NotNull(message = "categoryId cannnot be Null or Empty")  
+    Long categoryId,
+    
+    @NotNull(message = "serialNumber cannnot be Null or Empty")  
+    String serialNumber
 ) {
 
 }
